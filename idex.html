@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="topo">
+            <div>
+                <h1>Controle de Gastos</h1>
+                <p>Registre e acompanhe suas despesas do mês</p>
+            </div>
+
+            <div class="painel-total">
+                <span>Total Gasto no Mês</span>
+                <h2 id="total">R$ 0,00</h2>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Adicionar gasto</h3>
+
+            <form id="form-gasto" class="formulario">
+                <div class="campo">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Ex: Almoço">
+                </div>
+
+                <div class="campo">
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" step="0.01" min="0" placeholder="Ex: 25.50">
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option value="">Selecione</option>
+                        <option value="Alimentação">Alimentação</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Lazer">Lazer</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Contas">Contas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-adicionar">Adicionar gasto</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="cabecalho-lista">
+                <h3>Lista de gastos</h3>
+                <span id="quantidade-itens">0 itens</span>
+            </div>
+
+            <div class="tabela-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Categoria</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-gastos">
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="mensagem-vazia" class="mensagem-vazia">Nenhum gasto cadastrado ainda.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
